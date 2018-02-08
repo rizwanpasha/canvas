@@ -20,14 +20,14 @@ $canvas.addEventListener("mousedown", e => {
 });
 
 
-// mousedown event mimicks to drag end event and stores x, y cords to end the imaginary rectangle
+// mouseup event mimicks to drag end event and stores x, y cords to end the imaginary rectangle
 $canvas.addEventListener("mouseup", e => {
     let cX = $canvas.getBoundingClientRect().left + window.scrollX;
     let cY = $canvas.getBoundingClientRect().top + window.scrollY;
     endX = e.pageX - cX;
     endY = e.pageY - cY;
 
-    if (startX !== 0 && startX !== endX) {
+    if (startX !== endX) {
         if (startY > endY) {
             let tempX = startX;
             let tempY = startY;
